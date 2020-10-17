@@ -1,0 +1,63 @@
+<html>
+<head>
+  <script type="text/javascript" src="_js/p5.js"></script>
+
+<script>
+
+let jupiterbg;
+let jupitermov;
+let jupitergif;
+let twistedtorus;
+let marsbg;
+let venusbg;
+let bg;
+function preload() {
+  jupiterbg = loadImage('_images/2k_jupiter.jpg');
+  jupitergif = loadImage('_images/PIA02863.gif');
+  twistedtorus = loadModel('twisted_torus2.obj',true);
+  venusbg = loadImage('_images/2k_venus_atmosphere.jpg');
+  marsbg = loadImage('_images/2k_mars.jpg');
+}
+function setup() {
+  createCanvas(displayWidth,displayHeight,WEBGL);
+}
+
+function draw() {
+  background(0,0,0,0);
+  lights();
+  // directionalLIght(v1,v2,v3,x,y,z)
+  directionalLight(0,0,0,0,50,50);
+
+  // show my twisted torus (interlaced mobius)
+  push();
+  normalMaterial();
+  rotateZ(frameCount * 0.01);
+  rotateX(frameCount * 0.01);
+  rotateY(frameCount * 0.005);
+  noStroke();
+  // texture(marsbg);
+  scale(4.0);
+  model(twistedtorus);
+  pop();
+  push();
+    noStroke();
+    rotateX(0); // frameCount*0.005);
+    rotateY(frameCount*0.005);
+    rotateZ(0); // frameCount*0.005);
+    texture(jupitergif);
+    sphere(120);
+
+  pop();
+
+}
+
+</script>
+
+
+</head>
+
+<body style="background: url(_images/galaxy_bg2.jpg);">
+My 3D Universe
+
+</body>
+</html>

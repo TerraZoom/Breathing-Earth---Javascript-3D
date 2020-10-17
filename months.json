@@ -1,0 +1,79 @@
+{
+  "headline": "Breathing Earth",
+  "text": "lorem ipsum text here",
+  "credits": "NASA Blue Marble",
+  "months": [
+    {
+    "id": 1,
+    "month": "January",
+    "image": "earth_jan.jpg",
+    "sunAngle": "68.09"
+    },
+    {
+    "id": 2,
+    "month": "February",
+    "image": "earth_feb.jpg",
+    "sunAngle": "76.77"
+    },
+    {
+    "id": 3,
+    "month": "March",
+    "image": "earth_mar.jpg",
+    "sunAngle": "87.43"
+    },
+    {
+    "id": 4,
+    "month": "April",
+    "image": "earth_apr.jpg",
+    "sunAngle": "79.97"
+    },
+    {
+    "id": 5,
+    "month": "May",
+    "image": "earth_may.jpg",
+    "sunAngle": "70.94"
+    },
+    {
+    "id": 6,
+    "month": "June",
+    "image": "earth_jun.jpg",
+    "sunAngle": "66.71"
+    },
+    {
+    "id": 7,
+    "month": "July",
+    "image": "earth_jul.jpg",
+    "sunAngle": "68.4"
+    },
+    {
+    "id": 8,
+    "month": "August",
+    "image": "earth_aug.jpg",
+    "sunAngle": "75.52"
+    },
+    {
+    "id": 9,
+    "month": "September",
+    "image": "earth_sep.jpg",
+    "sunAngle": "87.57"
+    },
+    {
+    "id": 10,
+    "month": "October",
+    "image": "earth_oct.jpg",
+    "sunAngle": "81.61"
+    },
+    {
+    "id": 11,
+    "month": "November",
+    "image": "earth_nov.jpg",
+    "sunAngle": "70.73"
+    },
+    {
+    "id": 12,
+    "month": "December",
+    "image": "earth_dec.jpg",
+    "sunAngle": "66.64"
+    }
+  ]
+}

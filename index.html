@@ -1,0 +1,74 @@
+<html>
+<head>
+  <script type="text/javascript" src="_js/p5.js"></script>
+
+<script>
+
+let earth0, earth1, earth2, earth3, earth4, earth5, earth6, earth7, earth8, earth9, earth10, earth11;
+let panel;
+function preload() {
+  // data = loadJSON('months.json');
+  earth0 = loadImage('_images/earth_jan.jpg');
+  earth1 = loadImage('_images/earth_feb.jpg');
+  earth2 = loadImage('_images/earth_mar.jpg');
+  earth3 = loadImage('_images/earth_apr.jpg');
+  earth4 = loadImage('_images/earth_may.jpg');
+  earth5 = loadImage('_images/earth_jun.jpg');
+  earth6 = loadImage('_images/earth_jul.jpg');
+  earth7 = loadImage('_images/earth_aug.jpg');
+  earth8 = loadImage('_images/earth_sep.jpg');
+  earth9 = loadImage('_images/earth_oct.jpg');
+  earth10 = loadImage('_images/earth_nov.jpg');
+  earth11 = loadImage('_images/earth_dec.jpg');
+}
+function setup() {
+  createCanvas(displayWidth,displayHeight,WEBGL);
+  // loadData();
+}
+
+function draw() {
+  background(0,0,0,0);
+  // draw Earth
+  push();
+  noStroke();
+  // ambientMaterial(255);
+  rotateZ(-.2); // frameCount * 0.005);
+  rotateX(-.5); // frameCount * 0.005);
+  rotateY(frameCount * 0.005);
+
+  // texture(earth1);
+  // sphere(200);
+
+  // create for to change texture every 5 seconds (12 months in one minute)
+  for (i=0; i<=2; i++) {
+    // let earthImg = data.months[i].image;
+    let earthImg = "earth" + i;
+    console.log("earth: " + earthImg);
+
+    texture(earthImg);
+    sphere(200);
+    setInterval(3000);
+  }
+
+
+  // create function to position light depending on month;
+  // directionalLIght(v1,v2,v3,x,y,z)
+  let locX = mouseX - width/2;
+  let locY = mouseY - height/2;
+  // lightFalloff(0.9,0.01,0);
+  // pointLight(250,250,250,locX,locY,2500);
+  // sphere(200);
+  pop();
+
+}
+
+</script>
+
+
+</head>
+
+<body style="background: url(_images/galaxy_bg2.jpg)">
+My 3D Universe
+
+</body>
+</html>
