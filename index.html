@@ -1,74 +1,111 @@
 <html>
 <head>
+  <link rel="stylesheet" href="_css/months.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Eczar">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Proza Libre">
+
   <script type="text/javascript" src="_js/p5.js"></script>
 
-<script>
+  <script>
 
-let earth0, earth1, earth2, earth3, earth4, earth5, earth6, earth7, earth8, earth9, earth10, earth11;
-let panel;
-function preload() {
-  // data = loadJSON('months.json');
-  earth0 = loadImage('_images/earth_jan.jpg');
-  earth1 = loadImage('_images/earth_feb.jpg');
-  earth2 = loadImage('_images/earth_mar.jpg');
-  earth3 = loadImage('_images/earth_apr.jpg');
-  earth4 = loadImage('_images/earth_may.jpg');
-  earth5 = loadImage('_images/earth_jun.jpg');
-  earth6 = loadImage('_images/earth_jul.jpg');
-  earth7 = loadImage('_images/earth_aug.jpg');
-  earth8 = loadImage('_images/earth_sep.jpg');
-  earth9 = loadImage('_images/earth_oct.jpg');
-  earth10 = loadImage('_images/earth_nov.jpg');
-  earth11 = loadImage('_images/earth_dec.jpg');
-}
-function setup() {
-  createCanvas(displayWidth,displayHeight,WEBGL);
-  // loadData();
-}
+  let sceneIndex = 0;
+  let sceneTexture = [];
+  let sceneTextures;
+  let scenes;
 
-function draw() {
-  background(0,0,0,0);
-  // draw Earth
-  push();
-  noStroke();
-  // ambientMaterial(255);
-  rotateZ(-.2); // frameCount * 0.005);
-  rotateX(-.5); // frameCount * 0.005);
-  rotateY(frameCount * 0.005);
+  function preload() {
+    sceneTextures = loadJSON('months.json');
+    sceneTexture = [
+      loadImage('_images/earth1.jpg'),
+      loadImage('_images/earth2.jpg'),
+      loadImage('_images/earth3.jpg'),
+      loadImage('_images/earth4.jpg'),
+      loadImage('_images/earth5.jpg'),
+      loadImage('_images/earth6.jpg'),
+      loadImage('_images/earth7.jpg'),
+      loadImage('_images/earth8.jpg'),
+      loadImage('_images/earth9.jpg'),
+      loadImage('_images/earth10.jpg'),
+      loadImage('_images/earth11.jpg'),
+      loadImage('_images/earth12.jpg'),
+    ];
+    galaxybg = loadImage('_images/galaxy_bg2.jpg')
+  }
+  function setup() {
+    createCanvas(displayWidth,displayHeight,WEBGL);
+    setInterval(changeScene,3000);
 
-  // texture(earth1);
-  // sphere(200);
+    // draw info components
+    let headline = sceneTextures.headline;
+    let caption = sceneTextures.caption;
+    let credits = sceneTextures.credits;
 
-  // create for to change texture every 5 seconds (12 months in one minute)
-  for (i=0; i<=2; i++) {
-    // let earthImg = data.months[i].image;
-    let earthImg = "earth" + i;
-    console.log("earth: " + earthImg);
-
-    texture(earthImg);
-    sphere(200);
-    setInterval(3000);
+    document.getElementById("headline").innerHTML = headline;
+    document.getElementById("caption").innerHTML = caption;
+    document.getElementById("credits").innerHTML = credits;
   }
 
+  function draw() {
+    background(255);
+    drawBg(2);
+    // addLights();
+    drawSphere();
+  }
 
-  // create function to position light depending on month;
-  // directionalLIght(v1,v2,v3,x,y,z)
-  let locX = mouseX - width/2;
-  let locY = mouseY - height/2;
-  // lightFalloff(0.9,0.01,0);
-  // pointLight(250,250,250,locX,locY,2500);
-  // sphere(200);
-  pop();
+  function drawBg(bgScale) {
+    push();
+    imageMode(CENTER);
+    translate(0, 0, -1000);
+    image(galaxybg, 0, 0, galaxybg.width * bgScale, galaxybg.height * bgScale);
+    pop();
+  }
 
-}
+  function addLights() {
+    lights();
+    let dirX = (mouseX / width - 0.5) * 2;
+    let dirY = (mouseY / height - 0.5) * 2;
+    directionalLight(255, 255, 255, -dirX, -dirY, -1);
+  }
 
-</script>
+  function drawSphere() {
+    // get data from loadJSON
 
 
+    noStroke();
+    rotateZ(-0.2); // frameCount * 0.005);
+    rotateX(-0.5); // frameCount * 0.005);
+    rotateY(frameCount * 0.005);
+    texture(sceneTexture[sceneIndex]);
+    sphere(height * 0.35);
+    // sphere(300);
+  }
+
+  function changeScene() {
+    // justin's
+    sceneIndex = (sceneIndex + 1) % sceneTexture.length;
+    // my code
+    /*
+      if(sceneIndex<11) {
+        sceneIndex++;
+      } else {
+        sceneIndex = 0;
+      }
+  */
+  let month = sceneTextures.months[sceneIndex].month;
+  document.getElementById("whenHed").innerHTML = month;
+    console.log("scene: " + sceneIndex + " month: " + month);
+  }
+
+  </script>
 </head>
 
-<body style="background: url(_images/galaxy_bg2.jpg)">
-My 3D Universe
+<body>
+  <div class="content">
+    <div id="headline"></div>
+    <div id="caption"></div>
+  </div>
+  <div id="whenHed">January</div>
+  <div id="credits"></div>
 
 </body>
 </html>

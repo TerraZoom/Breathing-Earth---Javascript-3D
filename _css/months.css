@@ -1,0 +1,5 @@
+.content { position: absolute; top: 15%; left: 5%; }
+#headline { position: relative; margin: 10px 0 0 0; font-family: 'Eczar', serif; font-size: 100px; color: #fff; letter-spacing: -.03em; line-height: 80px; }
+#caption { position: relative; margin: 50px 0 0 0; width: 25%; font-family: 'Proza Libre', sans-serif; font-size: 18px; color: #fff; line-height: 30px; letter-spacing: -.01em; }
+#credits { position: absolute; bottom: 10px; right: 2%; width: 25%; font-family: 'Proza Libre', sans-serif; font-size: 14px; color: #fff; text-align: right; letter-spacing: -0.01em; }
+#whenHed { position: absolute; bottom: 3%; right: 2%; font-family: 'Eczar', serif; font-size: 8em; letter-spacing: -0.03em; color: #fff; }

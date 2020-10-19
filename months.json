@@ -1,78 +1,78 @@
 {
-  "headline": "Breathing Earth",
-  "text": "lorem ipsum text here",
-  "credits": "NASA Blue Marble",
+  "headline": "Breathing<br />Earth",
+  "caption": "<p>Every five seconds, this scene of Earth changes as the months change. Because the effects of seasonal change is most profound in the northern hemisphere, we have chosen to highlight this area.</p><p>The planet 'breathes' as the angle of the Sun changes during Earth's 365-day orbit. Not only do the snow bands move with the seasons but also watch the green ebb and flow in the equatorial forests of Africa.</p>",
+  "credits": "Blue Marble: Next Generation was produced by Reto St&ouml;ckli, NASA Earth Observatory (NASA Goddard Space Flight Center).",
   "months": [
     {
-    "id": 1,
+    "sceneIndex": 1,
     "month": "January",
-    "image": "earth_jan.jpg",
+    "image": "_images/earth1.jpg",
     "sunAngle": "68.09"
     },
     {
-    "id": 2,
+    "sceneIndex": 2,
     "month": "February",
-    "image": "earth_feb.jpg",
+    "image": "_images/earth2.jpg",
     "sunAngle": "76.77"
     },
     {
-    "id": 3,
+    "sceneIndex": 3,
     "month": "March",
-    "image": "earth_mar.jpg",
+    "image": "_images/earth3.jpg",
     "sunAngle": "87.43"
     },
     {
-    "id": 4,
+    "sceneIndex": 4,
     "month": "April",
-    "image": "earth_apr.jpg",
+    "image": "_images/earth4.jpg",
     "sunAngle": "79.97"
     },
     {
-    "id": 5,
+    "sceneIndex": 5,
     "month": "May",
-    "image": "earth_may.jpg",
+    "image": "_images/earth5.jpg",
     "sunAngle": "70.94"
     },
     {
-    "id": 6,
+    "sceneIndex": 6,
     "month": "June",
-    "image": "earth_jun.jpg",
+    "image": "_images/earth6.jpg",
     "sunAngle": "66.71"
     },
     {
-    "id": 7,
+    "sceneIndex": 7,
     "month": "July",
-    "image": "earth_jul.jpg",
+    "image": "_images/earth7.jpg",
     "sunAngle": "68.4"
     },
     {
-    "id": 8,
+    "sceneIndex": 8,
     "month": "August",
-    "image": "earth_aug.jpg",
+    "image": "_images/earth8.jpg",
     "sunAngle": "75.52"
     },
     {
-    "id": 9,
+    "sceneIndex": 9,
     "month": "September",
-    "image": "earth_sep.jpg",
+    "image": "_images/earth9.jpg",
     "sunAngle": "87.57"
     },
     {
-    "id": 10,
+    "sceneIndex": 10,
     "month": "October",
-    "image": "earth_oct.jpg",
+    "image": "_images/earth10.jpg",
     "sunAngle": "81.61"
     },
     {
-    "id": 11,
+    "sceneIndex": 11,
     "month": "November",
-    "image": "earth_nov.jpg",
+    "image": "_images/earth11.jpg",
     "sunAngle": "70.73"
     },
     {
-    "id": 12,
+    "sceneIndex": 12,
     "month": "December",
-    "image": "earth_dec.jpg",
+    "image": "_images/earth12.jpg",
     "sunAngle": "66.64"
     }
   ]
