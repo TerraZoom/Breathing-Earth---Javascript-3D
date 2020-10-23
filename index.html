@@ -9,12 +9,21 @@
   <script>
 
   let sceneIndex = 0;
-  let sceneTexture = [];
+  let sceneArray = [];
   let sceneTextures;
   let scenes;
 
+
   function preload() {
     sceneTextures = loadJSON('months.json');
+    for (let i = 0; i < sceneTextures.length; i++) {
+      let imageURL = sceneTextures.months[i].image;
+      sceneArray.push(imageURL);
+      console.log("array: " + sceneArray);
+    }
+
+    console.log("array: " + sceneArray);
+
     sceneTexture = [
       loadImage('_images/earth1.jpg'),
       loadImage('_images/earth2.jpg'),
